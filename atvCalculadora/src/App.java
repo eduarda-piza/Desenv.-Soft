@@ -1,35 +1,46 @@
 import java.util.Scanner;
 
 public class App {
+        
     public static void main(String[] args) throws Exception {
-    Scanner input = new Scanner(System.in);
+     Scanner input = new Scanner(System.in);
+     int opcao;
 
-    System.out.println("Digite o número 1: ");
-    int n1 = input.nextInt();
+        do{
+        System.out.println("Digite o número 1: ");
+        int num1 = input.nextInt();
+        System.out.println("Digite o número 2: ");
+        int num2 = input.nextInt();
 
-    System.out.println("Digite o número 2: ");
-    int n2 = input.nextInt();
+        Calculadora Calculadora = new Calculadora(num1, num2);
 
-    Calculadora Calculadora = new Calculadora(n1, n2);
+        System.out.println("Escolha uma opção: ");
+        System.out.println("1 - Somar");
+        System.out.println("2 - Subtrair");
+        System.out.println("3 - Multiplicar");
+        System.out.println("4 - Dividir");
+        opcao = input.nextInt();
 
-    System.out.println(Calculadora.soma());
-    System.out.println(Calculadora.subt());
-    System.out.println(Calculadora.divi());
-    System.out.println(Calculadora.multi());
-    
-    input.close();
+        switch (opcao) {
+            case 1:
+                System.out.println(Calculadora.soma());
+                break;
+            case 2:
+                    System.out.println(Calculadora.subtracao());
+                    break;
+            case 3:
+                    System.out.println(Calculadora.multiplicacao());
+                    break;
+            case 4:
+                    System.out.println(Calculadora.divisao());
+                    break;
+            default:
+                    System.out.println("Opção Inválida");
+                break;
+        }
 
+    }while (opcao != 5);
+
+        input.close();
     }
 }
-
-
-/*
-Crie uma classe para representar uma pseudo calculadora, que possui dois
-números inteiros como atributos. Nessa classe, os dois atributos devem ser
-privados. Por isso, criem também os métodos que irão acessar os atributos
-(getters e setters). Crie também métodos para realizar as seguintes
-operações com os dois atributos: soma, subtração, divisão e mulLplicação.
-Crie também uma outra classe, que possui um método principal e que
-instancie um objeto da classe criada, e que realiza as operações
-disponibilizadas pelo objeto.
- */
