@@ -1,4 +1,4 @@
-public class Calculadora {
+public class Calculadora{
     private int num1;
     private int num2;
 
@@ -8,29 +8,25 @@ public class Calculadora {
     public int getNum2(){return this.num2;}
     public void setNum2(int num2){this.num2 = num2;}
 
-    public Calculadora(int n1, int n2){
-        this.num1 = n1;
-        this.num2 = n2;
+    public Calculadora(int num1, int num2){
+        this.num1 = num1;
+        this.num2 = num2;
     }
 
     public int soma(){
-      return this.num1 + this.num2;
+        return this.num1 + this.num2;
     }
 
-     public int subt(){
-        if(this.num1 > this.num2){
-            return this.num1 - this.num2;
-        } else {
-            return this.num2 - this.num1;
-        }
+    public int subtracao(){
+        return this.num1 - this.num2;
     }
 
-     public int divi(){
-      return this.num1 / this.num2;
+    public int multiplicacao(){
+        return this.num1 * this.num2;
     }
 
-     public int multi(){
-      return this.num1 * this.num2;
+    public int divisao(){
+        return this.num1 / this.num2;
     }
 
 }
